@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JPEG Size Compressor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        #header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        #main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .quality-input {
+            margin-right: 10px;
+            width: 60px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #previewWindow {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            z-index: 999;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            border-radius: 5px;
+        }
+
+        #previewImage {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .closeBtn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>JPEG Size Compressor</h1>
+    </div>
+    <div id="main-container">
+        <label for="fileInput" class="btn">Select Image</label>
+        <input type="file" id="fileInput">
+        <label for="qualityInput">Quality (1 to 100): </label>
+        <input type="number" id="qualityInput" class="quality-input" min="1" max="100" value="80">
+        <button onclick="compressImage()" class="btn">Compress</button>
+        <button onclick="previewCompressed()" class="btn">Preview</button>
+        <button onclick="convertToPNG()" class="btn">Convert to PNG</button>
+        <div id="result-container" style="display: none;">
+            <h2>Result</h2>
+            <div class="image-container">
+                <img id="originalImage" style="display: none;">
+                <img id="compressedImage" style="display: none;">
+            </div>
+            <a id="downloadLink" style="display: none;" download="compressed.jpg" class="btn">Download Compressed Image</a>
+        </div>
+    </div>
+    <!-- Preview Window -->
+    <div id="previewWindow">
+        <img id="previewImage">
+        <span class="closeBtn" onclick="closePreview()">&times;</span>
+    </div>
+
+    <script>
+        // ... (previous JavaScript code) ...
+    </script>
+</body>
+
+</html>
