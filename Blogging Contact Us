@@ -1,0 +1,48 @@
+<style>
+  .contact-form-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form-container input[type="text"],
+  .contact-form-container input[type="email"],
+  .contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .contact-form-container textarea {
+    resize: vertical;
+    height: 150px;
+  }
+
+  .contact-form-container button[type="submit"] {
+    background-color: #f4961e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .contact-form-container button[type="submit"]:hover {
+    background-color: #ceaf02;
+  }
+</style>
+
+<div class="contact-form-container">
+  <p style="text-align: left;">Alternatively, you can fill out the form below to send us a message:</p>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input id="name" name="name" placeholder="Name*" required="" type="text" />
+    <input id="email" name="email" placeholder="Email*" required="" type="email" />
+    <textarea id="message" name="message" placeholder="Message*" required=""></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
